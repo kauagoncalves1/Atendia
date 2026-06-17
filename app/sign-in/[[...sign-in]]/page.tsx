@@ -5,7 +5,7 @@ export default function SignInPage() {
   return (
     <div className="flex min-h-screen">
       {/* Lado esquerdo */}
-      <div className="hidden lg:flex flex-1 flex-col justify-between p-10" style={{ background: '#042C53' }}>
+      <div className="hidden lg:flex lg:w-3/5 flex-col justify-between p-10" style={{ background: '#042C53' }}>
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-md flex items-center justify-center" style={{ background: '#378ADD' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -24,7 +24,6 @@ export default function SignInPage() {
             Automatize o WhatsApp do seu negócio com IA. Responda clientes, informe preços e agende serviços automaticamente.
           </p>
 
-          {/* Ilustração */}
           <div className="rounded-xl p-6 mb-10" style={{ background: '#0C447C' }}>
             <div className="flex items-start gap-3 mb-4">
               <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-medium" style={{ background: '#378ADD', color: '#fff' }}>C</div>
@@ -46,7 +45,6 @@ export default function SignInPage() {
             </div>
           </div>
 
-          {/* Planos */}
           <p className="text-xs font-medium tracking-widest mb-3" style={{ color: '#85B7EB' }}>PLANOS DISPONÍVEIS</p>
           <div className="grid grid-cols-3 gap-3">
             <div className="rounded-xl p-4" style={{ background: '#0C447C' }}>
@@ -73,9 +71,8 @@ export default function SignInPage() {
         </p>
       </div>
 
-      {/* Lado direito — formulário */}
-      <div className="flex-1 lg:max-w-md flex flex-col items-center justify-center p-8" style={{ background: '#F0F5FF' }}>
-        {/* Logo mobile */}
+      {/* Lado direito */}
+      <div className="flex-1 flex flex-col items-center justify-center p-8" style={{ background: '#F8FAFC' }}>
         <div className="flex items-center gap-2 mb-8 lg:hidden">
           <div className="w-7 h-7 rounded-md flex items-center justify-center" style={{ background: '#378ADD' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -88,7 +85,7 @@ export default function SignInPage() {
         <SignIn
           appearance={{
             elements: {
-              rootBox: 'w-full',
+              rootBox: 'w-full max-w-sm',
               card: 'shadow-none bg-white rounded-xl border border-gray-200 w-full',
               headerTitle: 'text-base font-medium text-gray-900',
               headerSubtitle: 'text-sm text-gray-500',
@@ -105,7 +102,7 @@ export default function SignInPage() {
           }}
         />
 
-        <p className="text-xs text-center mt-6" style={{ color: '#85B7EB' }}>
+        <p className="text-xs text-center mt-6 text-gray-400">
           Ao continuar, você concorda com nossa{' '}
           <Link href="/privacidade" className="underline" style={{ color: '#185FA5' }}>
             Política de Privacidade

@@ -69,7 +69,7 @@ export default function SignUpPage() {
       </div>
 
       {/* Lado direito */}
-      <div className="flex-1 lg:max-w-md flex flex-col items-center justify-center p-8" style={{ background: '#F0F5FF' }}>
+      <div className="flex-1 lg:max-w-md flex flex-col items-center justify-center p-8" style={{ background: '#F8FAFC' }}>
         <div className="flex items-center gap-2 mb-8 lg:hidden">
           <div className="w-7 h-7 rounded-md flex items-center justify-center" style={{ background: '#378ADD' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
