@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Atendia 🤖
 
-## Getting Started
+> Assistente de atendimento inteligente via WhatsApp para pequenos negócios brasileiros.
 
-First, run the development server:
+## O que é o Atendia?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+O Atendia é um SaaS que permite a pequenos negócios (barbearias, restaurantes, salões, clínicas, pet shops, etc) oferecer atendimento automatizado 24/7 via WhatsApp com inteligência artificial.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Como funciona?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Cliente envia mensagem no WhatsApp do negócio
+2. Mensagem é capturada via Z-API (webhook)
+3. Backend consulta dados do negócio no banco
+4. IA (Gemini) gera resposta contextualizada
+5. Resposta é enviada de volta ao cliente via Z-API
+6. Dono acompanha conversas no painel web
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Stack
 
-## Learn More
+| Componente | Tecnologia |
+|---|---|
+| Frontend/Backend | Next.js 15 (App Router) |
+| Banco de dados | Supabase (PostgreSQL + RLS) |
+| Autenticação | Clerk |
+| IA | Google Gemini |
+| WhatsApp | Z-API |
+| Pagamentos | Mercado Pago |
+| Deploy | Vercel |
 
-To learn more about Next.js, take a look at the following resources:
+## Funcionalidades
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- ✅ Autenticação segura com 2FA
+- ✅ Painel multi-tenant com isolamento por RLS
+- ✅ Cadastro do negócio (serviços, horários, regras)
+- ✅ Histórico de conversas
+- ✅ Atendimento automático via IA
+- ✅ Integração com WhatsApp via Z-API
+- ✅ Pagamentos recorrentes via Mercado Pago
+- ✅ Conformidade com LGPD
+- ✅ Design responsivo (mobile + desktop)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Planos
 
-## Deploy on Vercel
+| Plano | Preço | Mensagens |
+|---|---|---|
+| Trial | Grátis | 100 mensagens / 7 dias |
+| Básico | R$97/mês | 500 mensagens/mês |
+| Pro | R$197/mês | Ilimitado |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Licença
+
+Proprietário — todos os direitos reservados.
