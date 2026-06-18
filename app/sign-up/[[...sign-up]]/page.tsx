@@ -5,7 +5,7 @@ export default function SignUpPage() {
   return (
     <div className="flex min-h-screen">
       {/* Lado esquerdo */}
-      <div className="hidden lg:flex flex-1 flex-col justify-between p-10" style={{ background: '#042C53' }}>
+      <div className="hidden lg:flex lg:w-3/5 flex-col justify-between p-10" style={{ background: '#042C53' }}>
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-md flex items-center justify-center" style={{ background: '#378ADD' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -27,16 +27,14 @@ export default function SignUpPage() {
           {/* Benefícios */}
           <div className="flex flex-col gap-4 mb-10">
             {[
-              { icon: '✓', texto: 'Sem cartão de crédito para começar' },
-              { icon: '✓', texto: '100 mensagens grátis no período trial' },
-              { icon: '✓', texto: 'Configuração em menos de 5 minutos' },
-              { icon: '✓', texto: 'Suporte via WhatsApp incluído' },
-            ].map((item, i) => (
+              'Sem cartão de crédito para começar',
+              '100 mensagens grátis no período trial',
+              'Configuração em menos de 5 minutos',
+              'Suporte via WhatsApp incluído',
+            ].map((texto, i) => (
               <div key={i} className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-medium" style={{ background: '#378ADD', color: '#fff' }}>
-                  {item.icon}
-                </div>
-                <span className="text-sm" style={{ color: '#85B7EB' }}>{item.texto}</span>
+                <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-medium" style={{ background: '#378ADD', color: '#fff' }}>✓</div>
+                <span className="text-sm" style={{ color: '#85B7EB' }}>{texto}</span>
               </div>
             ))}
           </div>
@@ -69,7 +67,7 @@ export default function SignUpPage() {
       </div>
 
       {/* Lado direito */}
-      <div className="flex-1 lg:max-w-md flex flex-col items-center justify-center p-8" style={{ background: '#F8FAFC' }}>
+      <div className="flex-1 flex flex-col items-center justify-center p-8" style={{ background: '#F8FAFC' }}>
         <div className="flex items-center gap-2 mb-8 lg:hidden">
           <div className="w-7 h-7 rounded-md flex items-center justify-center" style={{ background: '#378ADD' }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -82,7 +80,7 @@ export default function SignUpPage() {
         <SignUp
           appearance={{
             elements: {
-              rootBox: 'w-full',
+              rootBox: 'w-full max-w-sm',
               card: 'shadow-none bg-white rounded-xl border border-gray-200 w-full',
               headerTitle: 'text-base font-medium text-gray-900',
               headerSubtitle: 'text-sm text-gray-500',
@@ -99,7 +97,7 @@ export default function SignUpPage() {
           }}
         />
 
-        <p className="text-xs text-center mt-6" style={{ color: '#6b7280' }}>
+        <p className="text-xs text-center mt-6 text-gray-400">
           Ao criar sua conta, você concorda com nossa{' '}
           <Link href="/privacidade" className="underline" style={{ color: '#185FA5' }}>
             Política de Privacidade
