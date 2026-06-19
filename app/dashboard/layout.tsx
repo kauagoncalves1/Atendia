@@ -2,8 +2,9 @@
 
 import Link from 'next/link'
 import { UserButton } from '@clerk/nextjs'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import Onboarding from './onboarding'
 
 const navItems = [
   {
@@ -35,10 +36,35 @@ const navItems = [
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const [menuAberto, setMenuAberto] = useState(false)
+  const [mostrarOnboarding, setMostrarOnboarding] = useState(false)
+  const [tenantId, setTenantId] = useState<string | null>(null)
   const pathname = usePathname()
+
+  useEffect(() => {
+    fetch('/api/tenant-status')
+      .then(res => res.json())
+      .then(data => {
+        if (data.tenantId) setTenantId(data.tenantId)
+        if (!data.onboardingCompleto) setMostrarOnboarding(true)
+      })
+      .catch(() => {})
+  }, [])
+
+  async function finalizarOnboarding() {
+    setMostrarOnboarding(false)
+    if (tenantId) {
+      await fetch('/api/onboarding', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ tenantId }),
+      })
+    }
+  }
 
   return (
     <div className="flex min-h-screen" style={{ background: '#F0F5FF' }}>
+      {mostrarOnboarding && <Onboarding onFinish={finalizarOnboarding} />}
+
       {/* Overlay mobile */}
       {menuAberto && (
         <div

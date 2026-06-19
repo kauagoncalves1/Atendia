@@ -84,7 +84,7 @@ export default async function DashboardPage() {
           </div>
         </div>
       </div>
-
+    
       {/* Trial banner */}
       {tenant?.plan === 'trial' && (
         <div className="rounded-xl p-4 flex items-center justify-between" style={{ background: '#E6F1FB', border: '0.5px solid #B5D4F4' }}>
